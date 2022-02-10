@@ -31,7 +31,7 @@ getAnswer =()=>{
   )
 }
 resetScore=()=>{
-  this.setState({score: 0})
+  this.setState({score: null},)
 }
 
 state ={
@@ -54,7 +54,8 @@ score: null
 {this.state.question && <button onClick={this.right}>Right</button>}
 {this.state.question && <button onClick={this.wrong}>Wrong</button>}
 {this.state.question && <button onClick={this.getAnswer}>Answer:{this.state.question.answer}</button>}
-{this.state.question && <button onClick={this.resetScore}>reset</button>}
+{this.state.question && <button onClick={this.resetScore}>Reset</button>}
+   
     </div>
     
   );
