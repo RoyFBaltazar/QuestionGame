@@ -1,0 +1,11 @@
+body{
+    display: grid;
+    background-color: aquamarine;
+    color: blueviolet; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    justify-content: center;
+}
+button{
+    background-color: burlywood;
+    font-size: large;
+}
