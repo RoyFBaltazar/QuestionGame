@@ -16,12 +16,22 @@ this.setState({question: data[0]}) }
 }
 right = ()=>{
 
-this.setState({score:( Number(this.state.score) + 1)})
+this.setState({score:( Number(this.state.score) + Number(this.state.question.value))})
 console.log(this.state.score)
 }
 wrong =()=>{
-  this.setState({score:( Number(this.state.score) - 1)})
+  this.setState({score:( Number(this.state.score) - Number(this.state.question.value))})
   console.log(this.state.score)
+}
+getAnswer =()=>{
+  console.log(this.state.question.answer)
+  return(
+    <li>answer: {this.state.question.answer}</li>
+    
+  )
+}
+resetScore=()=>{
+  this.setState({score: 0})
 }
 
 state ={
@@ -32,7 +42,7 @@ score: null
   render(){
   return (
     <div >
-      <h1>Jeaopardys App</h1>
+      <h1>Jeopardy App</h1>
 
     <button onClick={this.getQuestion}>Random Trivia Question </button>
     <div>
@@ -43,6 +53,8 @@ score: null
 
 {this.state.question && <button onClick={this.right}>Right</button>}
 {this.state.question && <button onClick={this.wrong}>Wrong</button>}
+{this.state.question && <button onClick={this.getAnswer}>Answer:{this.state.question.answer}</button>}
+{this.state.question && <button onClick={this.resetScore}>reset</button>}
     </div>
     
   );
